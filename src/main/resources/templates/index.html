@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="style/rodape.css">
+
+
+</head>
+
+
+
+<body class="bg-principal">
+	<!-- navbar -->
+	<nav class="navbar navbar-expand-xl">
+		<div class="container-fluid ">
+			<a class="navbar-brand" href="/">
+				<h1 class="m-0 texto-logo">
+					<img class="logo" src="img/logo.png" alt="logotipo">
+					Sabedoria+
+				</h1>
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item me-4">
+						<a class="nav-link botao-nav2 cor-vermelho" aria-current="page" href="/">Início</a>
+					</li>
+					<li class="nav-item me-4">
+						<a class="nav-link botao-nav2 " href="/sobreNos">Sobre Nós</a>
+					</li>
+					<li class="nav-item me-4">
+						<a class="nav-link botao-nav2" href="/planos">Planos</a>
+					</li>
+					<li class="nav-item me-4">
+						<a class="nav-link botao-nav" href="/mentores">Mentores</a>
+					</li>
+					<li class="nav-item me-4">
+						<!-- Use Thymeleaf para verificar se o usuário está autenticado -->
+						<th:block th:if="${#authorization.expression('isAuthenticated()')}">
+							<!-- Se autenticado, exibe o botão de logout -->
+							<a class="nav-link botao-nav" href="/perfil"
+								th:text="${#authentication.principal.nome}"></a>
+						</th:block>
+						<th:block th:unless="${#authorization.expression('isAuthenticated')}">
+							<!-- Se não autenticado, exibe o botão de login -->
+							<a class="nav-link botao-nav" href="/login">Login</a>
+						</th:block>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+	<!-- fim navbar -->
+
+	<hr>
+
+	<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active d-flex align-items-center justify-content-center">
+				<img src="img/fotohome2.png" class="d-block img-fluid mx-auto fotohomeprincipal" alt="idosos reunidos">
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<header class="container justify-content-center">
+
+		<h1 class="text-center my-3 my-xl-5 texto-principal cor-vermelho">
+			Mentoria Sênior: <br> aprendizado que vem com a experiência de vida
+		</h1>
+
+	</header>
+	<main>
+		<div class="row g-0 texto-inicio">
+			<div class="col-md-8" id="img-home">
+				<img src="img/fotohome3.png" class="d-block img-fluid mx-auto fotohome" alt="familia">
+			</div>
+		</div>
+
+
+		<div class="container text-center">
+			<h5 class="text_secundario">
+				<b>Descubra o poder da mentoria online e transforme sua trajetória profissional! Ao se cadastrar em
+					nossa plataforma, você terá acesso a mentores especializados prontos para orientar e impulsionar
+					seu desenvolvimento e adquirir insights valiosos! </b>
+			</h5>
+		</div>
+
+		<a href="/cadastrarMentorado" class="d-block text-center mt-3 mb-5">
+			<button class="custom-btn btn-3 mx-auto"><span>CADASTRE-SE</span></button>
+		</a>
+
+
+		<hr>
+
+		<!--Como Funciona-->
+
+		<h2 class="text-center my-3 my-xl-5 cor-vermelho escrevendo">Sua primeira mentoria</h2>
+
+		<div class="container row mx-auto g-4">
+
+
+			<div class="container row mx-auto g-4 card-box">
+				<h2 class="text-center my-3 my-xl-5 texto-principal cor-vermelho"> Como funciona ? </h2>
+
+
+				<div class="col-6 col-md-4 col-xxl-2">
+					<div class="card rounded-0 border-0 como-funciona">
+						<img src="img/t1.png" alt="Icone pessoa adicionar">
+						<div class="card como-funciona">
+							<p class="text-center card-text">
+								<strong>1. Cadastre-se ou faça login </strong>
+							</p>
+							<p class="text-center card-text">
+								Crie uma conta para ser um aluno ou faça o login para iniciar
+							</p>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-6 col-md-4 col-xxl-2">
+					<div class="card rounded-0 border-0 como-funciona">
+						<img src="img/t2.png" alt=" Icone lupa">
+						<div class="card como-funciona">
+							<p class="text-center card-text">
+								<strong>2. Busque o seu mentor</strong>
+							</p>
+							<p class="text-center card-text">
+								Use o sistema de busca para encontrar o mentor ideal
+							</p>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="col-6 col-md-4 col-xxl-2">
+					<div class="card rounded-0 border-0 como-funciona">
+						<img src="img/t3.png" alt="Lupa">
+						<div class="card como-funciona">
+							<p class="text-center card-text">
+								<strong>3. Conecte-se</strong>
+							</p>
+							<p class="text-center card-text">
+								Conecte-se com o mentor especialista na sua área de interesse
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-6 col-md-4 col-xxl-2">
+					<div class="card rounded-0 border-0 como-funciona">
+						<img src="img/t4.png" alt="Lupa">
+						<div class="card como-funciona">
+							<p class="text-center card-text">
+								<strong> 4. Agende um horário</strong>
+							</p>
+							<p class="text-center card-text">
+								Agende o melhor dia e horário para sua mentoria
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-6 col-md-4 col-xxl-2">
+					<div class="card rounded-0 border-0 como-funciona">
+						<img src="img/t5.png" alt="Lupa">
+						<div class="card como-funciona">
+							<p class="text-center card-text">
+								<strong> 5. Assista sua mentoria </strong>
+							</p>
+							<p class="text-center card-text ">
+								Assista sua mentoria e aprenda com os melhores
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 col-md-4 col-xxl-2">
+					<div class="card rounded-0 border-0 como-funciona">
+						<img src="img/t6.png" alt="Lupa">
+						<div class="card como-funciona">
+							<p class="text-center card-text">
+								<strong> 6. Avalie a sua mentoria </strong>
+							</p>
+							<p class="text-center card-text">
+								Seu feedback é muito importante, não deixe de comentar!
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="container row">
+				<div class="row">
+					<div class="col-12">
+						<div class="text-center p-1 mt-5  texto-principal cor-vermelho">
+							<h2 class="main-title2"> <strong> <b>SEJA UM SUPER MENTOR!
+									</b></strong></h2>
+						</div>
+					</div>
+
+					<div class="card mb-3 container-1">
+						<div class="row g-0">
+							<div class="col-md-8">
+								<div class="card-body">
+									<p class="card-text">Descubra o poder transformador que você carrega consigo! Ser um
+										mentor
+										na sua área de expertise é uma maneira gratificante de compartilhar sua vasta
+										experiência e conhecimento acumulado ao longo dos anos. Ao tornar-se um mentor
+										de
+										profissão, você não apenas contribui para o crescimento de outros indivíduos,
+										mas também
+										deixa um legado duradouro</p>
+									<div>
+										<a href="/mentores"><button class="custom-btn btn-3"><span>SAIBA
+													MAIS</span></button></a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<img src="./img/V3.jpeg" class="img-fluid rounded-start" alt="...">
+							</div>
+						</div>
+					</div>
+
+
+
+
+	</main>
+	<hr>
+
+	<!-- Dúvidas Frequentes -->
+
+
+	<div class="b-example-divider"></div>
+	<div class="container-2">
+
+		<div class="accordion" id="accordionExample">
+			<div class="text-center p-1 mt-5  texto-principal cor-vermelho">
+				<h2 class="main-title2" id="perguntasFrequentes"> <strong> <b>PERGUNTAS FREQUENTES
+						</b></strong> <img src="/img/gifPerguntas.gif" alt="imagem modular pesquisando"
+						class="img-fluid" width="180px"></h2>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="headingOne">
+					<button class="accordion-button" type="button" data-bs-toggle="collapse"
+						data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						Como posso agendar uma mentoria?
+					</button>
+				</h2>
+				<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+					data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						Para agendar uma mentoria, faça login na sua
+						conta, vá para a seção de agendamento no painel do aluno e escolha a disciplina desejada.
+						Selecione o horário disponível que melhor se encaixe em sua agenda. Certifique-se de confirmar a
+						reserva para garantir seu lugar na mentoria.
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="headingTwo">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+						data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						Posso participar de mais de uma mentoria por semana?
+					</button>
+				</h2>
+				<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+					data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						Sim, você pode participar de quantas mentoria desejar, desde que haja disponibilidade de
+						horários para a disciplina desejada. Recomendamos que você aproveite ao máximo essa oportunidade
+						para esclarecer dúvidas e aprofundar seu entendimento nos tópicos estudados.
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="headingThree">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+						data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						O que devo fazer se perder uma mentoria agendada?
+					</button>
+				</h2>
+				<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+					data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						Se você perder uma mentoria agendada, recomendamos que você acesse a seção de agendamento e
+						reagende para outro horário disponível. Caso não consiga reagendar, entre em contato com nossa
+						equipe de suporte para receber orientações adicionais. É importante comparecer às mentoria
+						para aproveitar ao máximo os benefícios oferecidos pelo serviço.
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<!-- Rodapé -->
+
+
+	<div class="container-fluid text-light mt-5 wow fadeInUp" id="footer-grande">
+		<div class="container">
+			<div class="row gx-5">
+				<div class="col-lg-4 col-md-6 footer-about">
+					<div class="d-flex flex-column align-items-center justify-content-center p-4" id="card-footer">
+						<a href="/" class="navbar-brand">
+							<h1 class="m-0 text-white"><i class="fa fa-user-tie me-2"></i><img class="logo"
+									src="img/logo.png" alt="logotipo"></i>Sabedoria+</h1>
+						</a>
+						<p class="mt-3 mb-4"> Quer receber nossas novidades,
+							promoções exclusivas e cupons de desconto?
+							Cadastre-se!<br> Inscreva-se e receba
+							tudo em primeira mão!</p>
+						<form action=""></form>
+						<div class="input-group">
+							<input type="text" class="form-control border-white p-3" placeholder="Insira seu e-mail">
+							<button class="btn btn-dark">Enviar</button>
+						</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-lg-8 col-md-6">
+					<div class="row gx-5">
+						<div class="col-lg-3 col-md-12 pt-5 mb-5">
+							<div class="section-title section-title-sm position-relative pb-3 mb-4">
+								<h3 class="text-light mb-0"> Quem Somos</h3>
+							</div>
+							<div class="d-flex mb-2">
+								<i class="bi bi-geo-alt text-primary me-2"></i>
+								<p class="mb-0" id="text-rodape">Sabedoria+ é
+									uma plataforma de mentoria inovadora, onde
+									os idosos
+									assumem o papel de mentores, compartilhando
+									suas experiências e sabedoria com a
+									geração mais jovem.
+
+								</p>
+							</div>
+
+						</div>
+						<div class="col-lg-3 col-md-12 pt-0 pt-lg-5 mb-5">
+							<div class="section-title section-title-sm position-relative pb-3 mb-4">
+								<h3 class="text-light mb-0">Links Rápidos</h3>
+							</div>
+							<div class="link-animated d-flex flex-column justify-content-start">
+								<a class="text-light mb-2" href="/"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Início</a>
+								<a class="text-light mb-2" href="/sobreNos"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Sobre
+									Nós</a>
+								<a class="text-light mb-2" href="/planos"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Nossos
+									Planos</a>
+								<a class="text-light mb-2" href="/mentores"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Mentores</a>
+								<a class="text-light mb-2" href="#perguntasFrequentes"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Perguntas
+									Frequentes</a>
+								<a class="text-light" href="/login"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Login</a>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-12 pt-0 pt-lg-5 mb-5">
+							<div class="section-title section-title-sm position-relative pb-3 mb-4">
+								<h3 class="text-light mb-0"> Nossas Redes Socias
+								</h3>
+							</div>
+
+							<div class="link-animated d-flex flex-column justify-content-start">
+								<a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>
+									WhatsApp <img src="img/icons8-whatsapp-48 (1).png" id="icones"
+										alt="Icone WhatsApp"></a>
+								<a class="text-light mb-2" href="#"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Instagram
+									<img src="img/icons8-instagram-48 (1).png" id="icones" alt=" Icone Instagram"></a>
+								<a class="text-light mb-2" href="#"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Facebook
+									<img src="img/icons8-facebook-novo-48.png" id="icones" alt="Icone Facebook"></a>
+
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-12 pt-0 pt-lg-5 mb-5">
+							<div class="section-title section-title-sm position-relative pb-3 mb-4">
+								<h3 class="text-light mb-0">Suporte </h3>
+							</div>
+							<div class="link-animated d-flex flex-column justify-content-start">
+								<a class="text-light mb-2" href="#"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Conta</a>
+								<a class="text-light mb-2" href="#"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Central de Suporte</a>
+								<a class="text-light mb-2" href="#"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Fale Conosco</a>
+								<a class="text-light mb-2" href="#"><i
+										class="bi bi-arrow-right text-primary me-2"></i>Termos e Condições</a>
+								<a class="text-light mb-2" href="#"><i
+										class="bi bi-arrow-right text-primary me-2"></i>LGPD-Lei Geral de Proteção de
+									Dados</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container-fluid" id="rodape">
+		<div class=" mt-2">
+			<div class="text-center p-3">
+				© Desenvolvido pelo Squad 20 | Projeto fictício
+				para Recode Pro 2023
+			</div>
+		</div>
+	</div>
+
+	<!-- Fim Rodapé -->
+
+
+	<div vw class="enabled">
+		<div vw-access-button class="active"></div>
+		<div vw-plugin-wrapper>
+			<div class="vw-plugin-top-wrapper"></div>
+		</div>
+	</div>
+
+	<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+	<script>
+		new window.VLibras.Widget();
+	</script>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

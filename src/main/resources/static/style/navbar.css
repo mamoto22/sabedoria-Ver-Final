@@ -1,0 +1,56 @@
+.custom-navbar {
+    padding: 10px 0;
+}
+
+.custom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custom-user-photo {
+   width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 15px;
+}
+
+.custom-user-name {
+    font-weight: bold;
+}
+
+.custom-navbar-links a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.botao-nav {
+	border: 1px solid;
+	border-radius: 25px;
+	width: 150px;
+	text-align: center;
+	margin-top: 5px;
+	font-weight: bold;
+    border-color: #FF0751;
+    padding: 0.5rem 1rem;
+    
+}
+
+@media (max-width: 767px) {
+    .custom-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .custom-navbar-links {
+        margin-top: 10px;
+    }
+
+    .custom-navbar-links a {
+        margin-right: 0;
+        margin-bottom: 5px;
+        display: block;
+    }
+}

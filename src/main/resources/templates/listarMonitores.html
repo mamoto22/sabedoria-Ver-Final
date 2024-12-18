@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<link rel="stylesheet" href="../style/cadastramonitoria.css">
+	<link rel="stylesheet" href="../style/navbar.css">
+
+	<title>Listagem de Monitores Disponiveis</title>
+</head>
+
+<body>
+
+
+
+	<main class="container">
+		<nav class="custom-navbar navbar-light bg-light">
+			<div class="custom-container justify-content-between align-items-center">
+				<div class="user-info d-flex align-items-center">
+					<img class="custom-user-photo" alt="Imagem do Mentor" sec:authorize="hasAuthority('MENTOR')"
+						th:src="@{'/imagemMentor/' + ${#authentication.principal.id}}" />
+					<img class="custom-user-photo" alt="Imagem do Mentor" sec:authorize="hasAuthority('CLIENTE')"
+						th:src="@{'/imagem/' + ${#authentication.principal.id}}" />
+					<span class="custom-user-name" th:text="${#authentication.principal.nome}"></span>
+				</div>
+
+				<div class="custom-navbar-links row">
+					<div class="col">
+						<a class="nav-link botao-nav" href="/monitoriasAgendadas">Mentorias</a>
+					</div>
+					<div class="col">
+						<a class="nav-link botao-nav" href="/perfil">Voltar</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<h1 class="mt-4 mb-4">Listagem de Mentores</h1>
+			</div>
+		</div>
+
+		<div class="card-deck">
+			<div th:each="mentor : ${mentores}" class="card">
+				<div class="card mb-4 shadow-sm">
+					<div class="row no-gutters">
+						<div class="col-md-4 d-flex align-items-center">
+
+							<img th:src="|/imagemMentor/${mentor.id}|" class="card-img rounded-circle"
+								alt="Imagem do Mentor">
+							<div class="info-monitor">
+								<h5 class="card-title" th:text="${mentor.nome}">Nome do Mentor</h5>
+								<p th:text="${mentor.profissao}"></p>
+							</div>
+						</div>
+
+						<div class="col-md-8">
+							<div class="card-body text-center">
+								<p class="card-text" th:text="${mentor.descricao}">
+								</p>
+
+								<a th:href="@{'/cadastrarMonitoriaUser'}" class="custom-btn  btn-4">
+									<span>Marcar Mentoria</span>
+								</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</main>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+
+</body>
+
+</html>
