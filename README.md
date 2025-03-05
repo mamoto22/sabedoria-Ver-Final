@@ -7,8 +7,7 @@
 </p>
 Sabedoria+ é uma plataforma de mentoria inovadora, desenvolvida pelo squad 20, um grupo de estudantes no curso de Desenvolvimento Web Full Stack, da Recode Pro 2023. Em nossa proposta os idosos assumem o papel de mentores, compartilhando suas experiências e sabedoria com a geração mais jovem. Durante todo o processo, avaliamos diversos pontos importantes para compor a plataforma, desde layout até a acessibilidade. Além disso, fomos moldado-o a partir de diferentes versões, visando a melhoria e resultar numa ótima entrega.
 <br><br>
-Link do nosso projeto:
-https://sabedoriamais.azurewebsites.net/
+
 
 
 ## Tecnologias Utilizadas
